@@ -9,6 +9,7 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String Team1;
+    String Team2;
 
 
 }
