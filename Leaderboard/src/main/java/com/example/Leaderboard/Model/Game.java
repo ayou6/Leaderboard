@@ -9,9 +9,9 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    @OneToOne
+//    @OneToOne
     public Team team1;
-    @OneToOne
+//    @OneToOne
     public Team team2;
     public int score1;
     public int score2;
