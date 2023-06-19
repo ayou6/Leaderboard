@@ -13,9 +13,9 @@ import javax.persistence.*;
 public class Players {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String playerName;
-    String passWord;
-    String sport;
+    public Long id;
+    private String playerName;
+    private String passWord;
+    public String sport;
 
 }
