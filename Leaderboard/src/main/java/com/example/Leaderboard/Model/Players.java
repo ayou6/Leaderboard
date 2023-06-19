@@ -4,6 +4,7 @@ import lombok.*;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Getter
@@ -17,5 +18,6 @@ public class Players {
     private String playerName;
     private String passWord;
     public String sport;
-
+    @OneToMany
+    List<Game> games;
 }
