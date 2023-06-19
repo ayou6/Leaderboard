@@ -1,10 +1,10 @@
 package com.example.Leaderboard.Model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 
 import javax.persistence.*;
+
 @Data
 @Getter
 @Setter
@@ -14,9 +14,8 @@ public class Players {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-
-
-
-
+    String playerName;
+    String passWord;
+    String sport;
 
 }
