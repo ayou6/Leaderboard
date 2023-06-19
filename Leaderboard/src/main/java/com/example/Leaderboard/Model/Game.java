@@ -7,12 +7,10 @@ import javax.persistence.Id;
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String Team1;
-    String Team2;
-    int score1;
-    int score2;
-
-
+    public Long id;
+    public Team team1;
+    public Team team2;
+    public int score1;
+    public int score2;
 
 }
