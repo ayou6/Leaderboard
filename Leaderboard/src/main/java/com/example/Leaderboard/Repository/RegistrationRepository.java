@@ -1,6 +1,6 @@
 package com.example.Leaderboard.Repository;
 
 
-public class RegistrationRepository {
+public interface RegistrationRepository {
 
 }
