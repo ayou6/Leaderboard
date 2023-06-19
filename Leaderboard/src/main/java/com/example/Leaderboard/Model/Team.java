@@ -1,11 +1,11 @@
 package com.example.Leaderboard.Model;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import java.util.List;
-
+import lombok.*;
+import javax.persistence.*;
+@Data
+@Setter
+@Getter
+@Entity
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,9 @@ public class Team {
     public String teamName;
     public String sport;
 
-    @ManyToOne
+    @OneToMany
     List<Game> games;
+    @OneToMany
+    List<Players> players;
 
 }
