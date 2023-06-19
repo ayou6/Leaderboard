@@ -3,10 +3,7 @@ package com.example.Leaderboard.Controller;
 import com.example.Leaderboard.Model.Game;
 import com.example.Leaderboard.Service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +16,11 @@ public class GameController {
         @GetMapping("/getAllGames")
         public List<Game> getAllGames(){
             return gameService.getAllGames();
+        }
+
+        @GetMapping("/getGameById")
+        public Game getGameById(@PathVariable ("id") Long id) {
+                return gameService.getGameById(id);
         }
 
 
