@@ -7,8 +7,8 @@ import javax.persistence.Id;
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String teamName;
-    String sport;
+    public Long id;
+    public String teamName;
+    public String sport;
 
 }
