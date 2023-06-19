@@ -10,6 +10,9 @@ public class Game {
     Long id;
     String Team1;
     String Team2;
+    int score1;
+    int score2;
+
 
 
 }
