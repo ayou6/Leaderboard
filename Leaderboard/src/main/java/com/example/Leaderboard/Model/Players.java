@@ -1,11 +1,7 @@
 package com.example.Leaderboard.Model;
-
 import lombok.*;
-
-
 import javax.persistence.*;
 import java.util.List;
-
 @Data
 @Getter
 @Setter
@@ -15,9 +11,11 @@ public class Players {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    private String playerName;
-    private String passWord;
-    public String sport;
+    public String playerName;
+    public String teamName;
+    public String sportName;
     @OneToMany
-    List<Game> games;
+    public List<Game> games;
+    @OneToOne
+    Team team;
 }
