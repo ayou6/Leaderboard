@@ -8,5 +8,7 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    String teamName;
+    String sport;
 
 }
