@@ -1,4 +1,4 @@
 package com.example.Leaderboard.Repository;
 
-public class TeamRepository {
+public interface TeamRepository {
 }
