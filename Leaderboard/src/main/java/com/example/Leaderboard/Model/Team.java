@@ -13,9 +13,9 @@ public class Team {
     public String teamName;
     public String sport;
 
-    @OneToMany
-    List<Game> games;
-    @OneToMany
-    List<Players> players;
+//    @OneToMany
+//    List<Game> games;
+//    @OneToMany
+//    List<Players> players;
 
 }
