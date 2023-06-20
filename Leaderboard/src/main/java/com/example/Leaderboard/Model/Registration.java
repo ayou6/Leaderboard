@@ -12,8 +12,8 @@ public class Registration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String userName;
-    String password;
-    String teamName;
-    String sportName;
+    public String userName;
+    public String password;
+    public String teamName;
+    public String sportName;
 }
