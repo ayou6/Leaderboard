@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RegistrationService {
-@Autowired
+    @Autowired
     RegistrationRepository registrationRepository;
+
     public Registration createTeam(Registration registration) {
         return registrationRepository.save(registration);
     }
