@@ -1,21 +1,23 @@
 package com.example.Leaderboard.Model;
-import java.util.List;
+
 import lombok.*;
+
 import javax.persistence.*;
+
 @Data
-@Setter
 @Getter
+@Setter
 @Entity
+
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    public Long teamId;
+    public String playerName;
+    public String password;
     public String teamName;
-    public String sport;
-
-//    @OneToMany
-//    List<Game> games;
-//    @OneToMany
-//    List<Players> players;
-
+    public String sportName;
+    @ManyToOne
+    @JoinColumn(name = "gameId")
+    Game game;
 }
