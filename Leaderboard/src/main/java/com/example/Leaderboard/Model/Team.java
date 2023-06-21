@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long teamId;
+    public Long playerId;
     public String playerName;
     public String password;
     public String teamName;
