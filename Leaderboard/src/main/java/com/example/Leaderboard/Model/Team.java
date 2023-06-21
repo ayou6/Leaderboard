@@ -12,12 +12,12 @@ import javax.persistence.*;
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long playerId;
-    public String playerName;
-    public String password;
+    public Long id;
     public String teamName;
     public String sportName;
     @ManyToOne
     @JoinColumn(name = "gameId")
     Game game;
+
+
 }

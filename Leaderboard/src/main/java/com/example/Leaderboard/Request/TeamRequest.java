@@ -17,9 +17,6 @@ public class TeamRequest {
 
     public Team convertToTeam(){
         Team team =new Team();
-        team.setPlayerId(this.playerId);
-        team.setTeamName(this.playerName);
-        team.setPassword(this.password);
         team.setTeamName(this.teamName);
         team.setSportName(this.sportName);
 

@@ -8,19 +8,18 @@ import javax.persistence.*;
 @Getter
 @Entity
 public class Game {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long gameId;
-    @OneToOne
-    @JoinColumn(name = "team1Id", referencedColumnName = "teamId")
-    Team team1;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long gameId;
 
-    @OneToOne
-    @JoinColumn(name = "team2Id", referencedColumnName = "teamId")
-    Team team2;
-    public int score1;
-    public int score2;
+        @OneToOne
+        @JoinColumn(name = "team1Id", referencedColumnName = "teamId")
+        private Team team1;
 
+        @OneToOne
+        @JoinColumn(name = "team2Id", referencedColumnName = "teamId")
+        private Team team2;
 
+        private Integer score1;
+        private Integer score2;
 }
-

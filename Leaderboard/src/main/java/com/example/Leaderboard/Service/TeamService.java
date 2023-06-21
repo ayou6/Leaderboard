@@ -9,9 +9,16 @@ import org.springframework.stereotype.Service;
 public class TeamService {
     @Autowired
     TeamRepository teamRepository;
+    public Team getTeamById(Long id) {
+        return teamRepository.findById(id).orElse(null);
+    }
 
     public Team createTeam(Team team) {
         return teamRepository.save(team);
     }
 
-}
+
+    }
+
+
+

@@ -1,19 +1,24 @@
 package com.example.Leaderboard.Controller;
 
 import com.example.Leaderboard.Model.Game;
+import com.example.Leaderboard.Repository.GameRepository;
+import com.example.Leaderboard.Request.CreateGameRequest;
+import com.example.Leaderboard.Response.GameResponse;
 import com.example.Leaderboard.Service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.security.auth.kerberos.KerberosTicket;
 import java.util.List;
-import java.util.Map;
+
 
 @RestController
-@RequestMapping("api/games")
+@RequestMapping("/api/games")
 public class GameController {
+
     @Autowired
-    GameService gameService;
+    private GameService gameService;
 
     @GetMapping("/getAllGames")
     public List<Game> getAllGames() {
@@ -21,20 +26,28 @@ public class GameController {
     }
 
     @GetMapping("/getGameById")
-    public Game getGameById(@PathVariable("id") Long id) {
+    public Game getGameById(@RequestParam Long id) {
         return gameService.getGameById(id);
     }
 
-    @PostMapping
-    public Game createGame(@RequestBody Game game) {
-        return gameService.createGame(game);
+    @PostMapping("/createGame")
+    public ResponseEntity<String> createGame(@RequestBody CreateGameRequest gameRequest) {
+        gameService.createGame(gameRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Game created successfully.");
     }
 
-    @PutMapping("/{gameId}/assign")
-    public Game assignTeams(@PathVariable("gameId") Long gameId,
-                            @RequestBody Map<String, List<Long>> requestBody) {
-        List<Long> teamIds = requestBody.get("teamId");
-        gameService.assignTeams(gameId, teamIds);
-        return null;
+
+    @PostMapping("/deleteAllGames")
+    public void deleteAllGames() {
+        gameService.deleteAllGames();
     }
-}
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Game> updateGame(@PathVariable Long id, @RequestBody Game updatedGame) {
+        Game game = gameService.updateGame(id, updatedGame);
+        if (game != null) {
+            return ResponseEntity.ok(game);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }}
