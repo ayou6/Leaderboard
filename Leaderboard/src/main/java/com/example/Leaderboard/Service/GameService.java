@@ -27,6 +27,8 @@ public class GameService {
         return gameRepository.save(game);
     }
 
+
+
     public Game assignTeams(Long gameId, List<Long> teamIds) {
         Game game = gameRepository.findById(gameId).get();
         for (Long teamId : teamIds) {
