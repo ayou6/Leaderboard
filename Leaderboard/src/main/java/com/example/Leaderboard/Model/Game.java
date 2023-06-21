@@ -1,9 +1,9 @@
 package com.example.Leaderboard.Model;
 import lombok.*;
 import javax.persistence.*;
-import java.util.Set;
 
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
 @Entity
@@ -23,3 +23,4 @@ public class Game {
 
 
 }
+
