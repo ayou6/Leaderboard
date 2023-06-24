@@ -3,6 +3,8 @@ import com.example.Leaderboard.Model.Player;
 import com.example.Leaderboard.Model.Team;
 import com.example.Leaderboard.Repository.PlayerRepository;
 import com.example.Leaderboard.Repository.TeamRepository;
+import com.example.Leaderboard.Request.RegistrationRequest;
+import com.example.Leaderboard.Service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,10 +16,13 @@ import org.springframework.web.bind.annotation.*;
 public class RegistrationController {
 
     @Autowired
-    private PlayerRepository playerRepository;
+    PlayerRepository playerRepository;
 
     @Autowired
-    private TeamRepository teamRepository;
+    RegistrationService registrationService;
+
+    @Autowired
+    TeamRepository teamRepository;
 
     @PostMapping("/player")
     public ResponseEntity<String> registerPlayer(@RequestBody Player player) {
