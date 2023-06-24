@@ -42,12 +42,5 @@ public class GameController {
         gameService.deleteAllGames();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Game> updateGame(@PathVariable Long id, @RequestBody Game updatedGame) {
-        Game game = gameService.updateGame(id, updatedGame);
-        if (game != null) {
-            return ResponseEntity.ok(game);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+ api
     }}
