@@ -42,5 +42,4 @@ public class GameController {
         gameService.deleteAllGames();
     }
 
- api
-    }}
+    }
